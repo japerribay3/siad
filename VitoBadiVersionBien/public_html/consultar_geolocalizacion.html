@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VitoBadi - Consultar geolocalización</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fuentes corporativas -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS específico -->
+    <link rel="stylesheet" href="./css/consultar_geolocalizacion.css">
+  </head>
+
+  <body>
+    <!-- 🔵 HEADER GLOBAL -->
+    <header class="vb-header">
+      <div class="vb-header-inner">
+        <div class="vb-header-left">
+          <img src="./fotos/logo.png" class="vb-logo" alt="VitoBadi logo">
+          <span class="vb-title">VitoBadi</span>
+        </div>
+        <div id="loginBox"></div>
+      </div>
+    </header>
+
+    <!-- 🔵 CONTENIDO PRINCIPAL -->
+    <main class="geo-main">
+      <section class="geo-card">
+        <h1 class="geo-title">Consulta por geolocalización</h1>
+        <p class="geo-subtitle">
+          Escribe una dirección o ciudad, elige un radio de búsqueda y te mostraremos las habitaciones dentro de ese área.
+        </p>
+
+        <form id="geoForm" class="geo-form" novalidate>
+          <div class="geo-form-row">
+            <div class="geo-form-group">
+              <label for="centerAddress">Dirección o ciudad</label>
+              <input
+                type="text"
+                id="centerAddress"
+                required
+                placeholder="Ej: Vitoria-Gasteiz, C/ San Prudencio 1..."
+              />
+            </div>
+
+            <div class="geo-form-group">
+              <label for="radiusKm">Radio (km)</label>
+              <select id="radiusKm" required>
+                <option value="1">1 km</option>
+                <option value="3" selected>3 km</option>
+                <option value="5">5 km</option>
+                <option value="10">10 km</option>
+              </select>
+            </div>
+
+            <div class="geo-form-group geo-form-group--btn">
+              <button type="submit" class="geo-btn primary">Buscar</button>
+            </div>
+          </div>
+
+          <p id="formErr" class="geo-error"></p>
+        </form>
+      </section>
+
+      <!-- Mapa y resultados -->
+      <section class="geo-map-card">
+        <div id="map" class="geo-map"></div>
+
+        <div class="geo-results-header">
+          <h2 class="geo-results-title">Resultados</h2>
+          <p id="resultsInfo" class="geo-results-info">
+            Introduce una dirección y pulsa “Buscar”.
+          </p>
+        </div>
+
+        <div id="resultsList" class="geo-results-list">
+          <!-- consultar_geolocalizacion.js insertará aquí las habitaciones -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="geo-footer">
+      © 2025 VitoBadi
+    </footer>
+
+    <!-- Google Maps JS API (SUSTITUYE TU_API_KEY_AQUI) -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDj35DCniQwuLv1GHy1puixLXzyRqJ7w_M&libraries=geometry"></script>
+
+    <!-- JS de la pantalla -->
+    <script type="module" src="./js/consultar_geolocalizacion.js"></script>
+  </body>
+</html>

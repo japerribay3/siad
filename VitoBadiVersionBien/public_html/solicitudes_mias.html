@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VitoBadi - Mis Solicitudes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fuentes corporativas -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Mis Solicitudes -->
+    <link rel="stylesheet" href="./css/solicitudes_mias.css">
+  </head>
+
+  <body>
+    <!-- HEADER GLOBAL -->
+    <header class="vb-header">
+      <div class="vb-header-inner">
+        <div class="vb-header-left">
+          <img src="./fotos/logo.png" class="vb-logo" alt="VitoBadi logo">
+          <span class="vb-title">VitoBadi</span>
+        </div>
+        <div id="loginBox"></div>
+      </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="solicitudes-main">
+      <section class="solicitudes-card">
+        <h1 class="solicitudes-title">Mis Solicitudes</h1>
+        <p class="solicitudes-subtitle">
+          Aquí puedes ver todas las solicitudes que has hecho sobre habitaciones y su estado actual.
+        </p>
+
+        <!-- CONTENEDOR DONDE JS PINTA LAS CARDS -->
+        <div id="solicitudesContainer" class="solicitudes-list"></div>
+
+        <p id="solicitudesEmpty" class="solicitudes-empty">Aún no has hecho solicitudes.</p>
+      </section>
+    </main>
+
+    <footer class="solicitudes-footer">
+      © 2025 VitoBadi
+    </footer>
+
+    <script type="module" src="./js/solicitudes_mias.js"></script>
+  </body>
+</html>

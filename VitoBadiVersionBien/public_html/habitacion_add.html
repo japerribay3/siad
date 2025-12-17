@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VitoBadi - Añadir habitación</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fuentes corporativas -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS de habitaciones_add -->
+    <link rel="stylesheet" href="./css/habitaciones_add.css">
+  </head>
+
+  <body>
+    <!-- 🔵 HEADER GLOBAL (logo + usuario/login dinámico) -->
+    <header class="vb-header">
+      <div class="vb-header-inner">
+        <div class="vb-header-left">
+          <img src="./fotos/logo.png" class="vb-logo" alt="VitoBadi logo">
+          <span class="vb-title">VitoBadi</span>
+        </div>
+
+        <!-- Aquí habitaciones_add.js pintará usuario / Logout o botón Login -->
+        <div id="loginBox">
+          <!-- Relleno dinámico -->
+        </div>
+      </div>
+    </header>
+
+    <!-- 🔵 CONTENIDO PRINCIPAL: FORMULARIO ALTA HABITACIÓN -->
+    <main class="hab-main">
+      <section class="hab-card">
+        <h1 class="hab-title">Añadir habitación</h1>
+        <p class="hab-subtitle">
+          Completa los datos de la habitación y sube una imagen. La imagen se almacenará en la base de datos en formato Base64.
+        </p>
+
+        <form id="roomForm" class="hab-form" novalidate>
+          <label for="address">Dirección</label>
+          <input
+            type="text"
+            id="address"
+            required
+            placeholder="Ej: C/ San Prudencio 1"
+          />
+
+          <label for="city">Ciudad</label>
+          <select id="city" required>
+            <option value="">Selecciona ciudad…</option>
+            <option value="Vitoria-Gasteiz">Vitoria-Gasteiz</option>
+            <option value="Bilbo">Bilbo</option>
+            <option value="Donosti">Donosti</option>
+          </select>
+
+          <label for="price">Precio mensual (€)</label>
+          <input
+            type="number"
+            id="price"
+            min="1"
+            step="1"
+            required
+            placeholder="Ej: 350"
+          />
+
+          <label>Imagen de la habitación</label>
+          <div id="dropZone" class="hab-drop-zone">
+            <p>Arrastra aquí una imagen o haz clic para seleccionarla</p>
+            <input type="file" id="imageInput" accept="image/*" hidden />
+          </div>
+
+          <div class="hab-preview-wrapper">
+            <p class="hab-subtle">Previsualización:</p>
+            <img id="previewImg" alt="Vista previa habitación" />
+          </div>
+
+          <p id="formErr" class="hab-error"></p>
+
+          <div class="hab-actions">
+            <button type="submit" class="hab-btn primary">Guardar habitación</button>
+            <a href="dashboard.html" class="hab-btn ghost">Volver al panel</a>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="hab-footer">
+      © 2025 VitoBadi
+    </footer>
+
+    <!-- JS de habitaciones_add (drag-drop + base64 + IndexedDB + sesión) -->
+    <script type="module" src="./js/habitaciones_add.js"></script>
+  </body>
+</html>

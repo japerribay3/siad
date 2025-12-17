@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VitoBadi - Panel de usuario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fuentes corporativas -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS del dashboard -->
+    <link rel="stylesheet" href="./css/dashboard.css">
+  </head>
+
+  <body>
+    <!-- 🔵 HEADER GLOBAL (logo + usuario + logout) -->
+    <header class="vb-header">
+      <div class="vb-header-inner">
+        <div class="vb-header-left">
+          <img src="./fotos/logo.png" class="vb-logo" alt="VitoBadi logo">
+          <span class="vb-title">VitoBadi</span>
+        </div>
+
+        <!-- Caja que dashboard.js rellenará con usuario/Logout -->
+        <div id="loginBox">
+          <!-- Si se entra sin sesión, dashboard.js redirige a login.html -->
+        </div>
+      </div>
+    </header>
+
+    <!-- 🔵 NAV SUPERIOR: Consultar / Habitaciones / Ver / Propietario -->
+    <nav class="dash-nav">
+      <div class="dash-nav-inner">
+
+        <!-- Consultar -->
+        <div class="nav-col">
+          <button class="nav-col-btn" data-menu="consultar">
+            Consultar
+          </button>
+          <div class="nav-dropdown" id="menu-consultar" aria-hidden="true">
+            <a href="index.html">Genérico</a>
+            <a href="consultar_geolocalizacion.html">Geolocalización</a>
+          </div>
+        </div>
+
+        <!-- Habitaciones -->
+        <div class="nav-col">
+          <button class="nav-col-btn" data-menu="habitaciones">
+            Habitaciones
+          </button>
+          <div class="nav-dropdown" id="menu-habitaciones" aria-hidden="true">
+            <a href="habitacion_add.html">Añadir</a>
+            <a href="habitaciones_mis.html">Ver mis habitaciones</a>
+          </div>
+        </div>
+
+        <!-- Ver -->
+        <div class="nav-col">
+          <button class="nav-col-btn" data-menu="ver">
+            Ver
+          </button>
+          <div class="nav-dropdown" id="menu-ver" aria-hidden="true">
+            <a href="solicitudes_mias.html">Mis solicitudes</a>
+            <a href="alquileres_mios.html">Mis alquileres</a>
+          </div>
+        </div>
+
+        <!-- Propietario (se oculta si el usuario no tiene habitaciones) -->
+        <div class="nav-col" id="col-propietario">
+          <button class="nav-col-btn" data-menu="propietario">
+            Propietario
+          </button>
+          <div class="nav-dropdown" id="menu-propietario" aria-hidden="true">
+            <a href="prop_solicitudes.html">Solicitudes de mis habitaciones</a>
+            <a href="prop_alquileres.html">Alquileres de mis habitaciones</a>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- 🔵 CONTENIDO PRINCIPAL DEL DASHBOARD -->
+    <main class="dash-main">
+      <section class="card">
+        <h1 class="dash-title">Panel de usuario</h1>
+        <p class="dash-subtitle">
+          Desde aquí puedes consultar habitaciones, gestionar tus solicitudes y administrar tus alquileres.
+        </p>
+
+        <!-- Zona donde puedes pintar cosas dinámicas si quieres -->
+        <div id="dashContent">
+          <p class="muted">
+            Elige una opción en la barra superior para empezar.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      © 2025 VitoBadi
+    </footer>
+
+    <!-- JS del dashboard -->
+    <script type="module" src="./js/dashboard.js"></script>
+  </body>
+</html>

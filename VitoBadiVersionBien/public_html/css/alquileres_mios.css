@@ -1,0 +1,374 @@
+/* ================================
+   VARIABLES DE DISEÑO
+================================ */
+:root {
+  --vb-bg: #f5f7fb;
+  --vb-surface: #ffffff;
+  --vb-border: #e0e4f0;
+  --vb-brand: #4b7bec;
+  --vb-accent: #ff8a5c;
+  --vb-text: #1f2933;
+  --vb-muted: #6b7280;
+  --vb-radius-lg: 16px;
+  --vb-radius-xl: 20px;
+  --vb-shadow-soft: 0 14px 30px rgba(15, 23, 42, 0.12);
+}
+
+/* ================================
+   RESETEO BÁSICO
+================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #e8f0ff 0, #f5f7fb 40%, #f7f9ff 100%);
+  color: var(--vb-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================================
+   HEADER GLOBAL
+================================ */
+.vb-header {
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.vb-header-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vb-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.vb-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.vb-title {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.03em;
+  color: var(--vb-brand);
+}
+
+/* Usuario en header */
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.header-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 2px solid rgba(59, 130, 246, 0.4);
+}
+
+.vb-header-username {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--vb-text);
+}
+
+/* Botón login / logout */
+.vb-login-btn {
+  border: none;
+  outline: none;
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--vb-brand);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.vb-login-btn:hover {
+  transform: translateY(-1px);
+  background: #3b6ae0;
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.35);
+}
+
+.vb-login-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 14px rgba(37, 99, 235, 0.28);
+}
+
+/* ================================
+   LAYOUT PRINCIPAL
+================================ */
+.alquileres-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 1rem 2rem;
+}
+
+.alquileres-card {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  background: var(--vb-surface);
+  border-radius: 24px;
+  box-shadow: var(--vb-shadow-soft);
+  padding: 1.8rem 1.8rem 2.2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* detalle decorativo */
+.alquileres-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, #dbeafe 0, transparent 55%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.alquileres-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Título y texto superior */
+.alquileres-title {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+  color: var(--vb-text);
+}
+
+.alquileres-subtitle {
+  margin: 0 0 1.4rem;
+  font-size: 0.95rem;
+  color: var(--vb-muted);
+}
+
+/* ================================
+   LISTA DE ALQUILERES
+================================ */
+.alquileres-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Mensaje "no hay alquileres" */
+.alquileres-empty {
+  margin-top: 1.6rem;
+  font-size: 0.95rem;
+  color: var(--vb-muted);
+  text-align: center;
+}
+
+/* Mensajes de estado */
+.loading-msg {
+  font-size: 0.95rem;
+  color: var(--vb-muted);
+  text-align: center;
+}
+
+.error {
+  font-size: 0.95rem;
+  color: #b91c1c;
+  background: #fef2f2;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #fecaca;
+}
+
+/* ================================
+   CARD DE ALQUILER
+================================ */
+.alquiler-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  border: 1px solid var(--vb-border);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.alquiler-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.1);
+}
+
+.alquiler-card-inner {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1.1rem;
+  padding: 1rem 1.2rem;
+}
+
+/* Imagen de la habitación */
+.alquiler-card-img {
+  border-radius: 14px;
+  overflow: hidden;
+  align-self: stretch;
+  display: flex;
+}
+
+.alquiler-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Contenido */
+.alquiler-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.alquiler-card-title {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  color: var(--vb-text);
+}
+
+.alquiler-card-price {
+  margin: 0 0 0.2rem;
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--vb-accent);
+}
+
+.alquiler-card-dates,
+.alquiler-card-owner {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--vb-muted);
+}
+
+.alquiler-card-dates strong,
+.alquiler-card-owner strong {
+  color: var(--vb-text);
+}
+
+/* Estado del alquiler */
+.alquiler-card-status {
+  margin: 0.35rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+/* Activo */
+.alquiler-estado-activo {
+  color: #166534;
+  background: #dcfce7;
+  border-color: #bbf7d0;
+}
+
+/* Finalizado */
+.alquiler-estado-finalizado {
+  color: #92400e;
+  background: #fffbeb;
+  border-color: #fed7aa;
+}
+
+/* ================================
+   FOOTER
+================================ */
+.alquileres-footer {
+  text-align: center;
+  padding: 1.1rem 1rem 1.4rem;
+  font-size: 0.85rem;
+  color: var(--vb-muted);
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .vb-header-inner {
+    padding: 0.75rem 1rem;
+  }
+
+  .alquileres-main {
+    padding: 1.6rem 0.8rem 1.6rem;
+  }
+
+  .alquileres-card {
+    padding: 1.4rem 1.4rem 1.8rem;
+  }
+
+  .alquileres-title {
+    font-size: 1.35rem;
+  }
+
+  .alquiler-card-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .alquiler-card-img {
+    max-height: 190px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vb-title {
+    font-size: 1.1rem;
+  }
+
+  .alquileres-card {
+    border-radius: 18px;
+    padding: 1.2rem 1.1rem 1.5rem;
+  }
+
+  .alquiler-card-inner {
+    padding: 0.9rem 0.9rem 1rem;
+  }
+}

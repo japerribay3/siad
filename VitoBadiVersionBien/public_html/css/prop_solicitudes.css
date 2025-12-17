@@ -1,0 +1,292 @@
+/* css/prop_solicitudes.css */
+:root {
+  --surface: var(--vb-surface);
+  --muted: var(--vb-muted);
+  --accent: var(--vb-accent);
+  --brand: var(--vb-brand);
+}
+
+/* Card principal de la página */
+.prop-card {
+  max-width: 1050px;
+  margin: 32px auto;
+}
+
+/* Lista de habitaciones */
+.prop-solicitudes-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Mensaje vacío */
+.prop-empty-msg {
+  margin-top: 1.6rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ================================
+   CARD DE HABITACIÓN (PROPIETARIO)
+================================ */
+.prop-room-card {
+  background: var(--surface, #ffffff);
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1.1rem;
+  padding: 1rem 1.2rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.prop-room-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.1);
+}
+
+/* Imagen habitación */
+.prop-room-img-wrapper {
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+}
+
+.prop-room-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Cuerpo */
+.prop-room-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.prop-room-header-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.prop-room-title {
+  margin: 0;
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.prop-room-address {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.prop-room-price-block {
+  text-align: right;
+}
+
+.prop-room-price {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--brand, #4b7bec);
+}
+
+/* Meta (último alquiler) */
+.prop-room-meta p {
+  margin: 2px 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.prop-room-meta strong {
+  color: #1f2933;
+}
+
+/* Botón "Ver posibles inquilinos" */
+.prop-room-actions {
+  margin-top: 0.4rem;
+}
+
+.prop-room-toggle-btn {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--brand, #4b7bec);
+  color: #ffffff;
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.25);
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.prop-room-toggle-btn:hover {
+  background: #3b6ae0;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.35);
+}
+
+/* ================================
+   LISTA DE SOLICITUDES (DENTRO DE LA HABITACIÓN)
+================================ */
+.prop-requests-wrapper {
+  margin-top: 0.7rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed rgba(148, 163, 184, 0.7);
+}
+
+.prop-requests-loading,
+.prop-requests-empty {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.prop-requests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+/* Fila de posible inquilino */
+.prop-request-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.4fr) auto;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.4rem 0.55rem;
+  border-radius: 12px;
+  background: rgba(248, 250, 252, 0.7);
+}
+
+.prop-request-main {
+  min-width: 0;
+}
+
+.prop-request-name {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.prop-request-email {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.prop-request-info {
+  min-width: 0;
+  font-size: 0.85rem;
+}
+
+.prop-request-info p {
+  margin: 0 0 2px;
+}
+
+/* Pill de estado */
+.prop-request-estado {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.prop-request-estado.is-pending {
+  background: #e0ecff;
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+}
+
+.prop-request-estado.is-accepted {
+  background: #dcfce7;
+  border-color: #bbf7d0;
+  color: #166534;
+}
+
+.prop-request-estado.is-rejected {
+  background: #fee2e2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
+.prop-request-estado.is-cancelled {
+  background: #e5e7eb;
+  border-color: #d1d5db;
+  color: #4b5563;
+}
+
+/* Botón aceptar */
+.prop-request-actions {
+  text-align: right;
+}
+
+.prop-request-accept-btn {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 0.25rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #22c55e;
+  color: #ffffff;
+  box-shadow: 0 8px 16px rgba(34, 197, 94, 0.3);
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.prop-request-accept-btn:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(34, 197, 94, 0.4);
+}
+
+/* Mensajes de estado / error reutilizables */
+.loading-msg {
+  color: var(--muted);
+  text-align: center;
+  margin-top: 8px;
+}
+
+.error {
+  color: #b91c1c;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .prop-card {
+    margin: 20px auto;
+  }
+
+  .prop-room-card {
+    grid-template-columns: 1fr;
+  }
+
+  .prop-room-img-wrapper {
+    max-height: 190px;
+  }
+
+  .prop-request-row {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
+
+  .prop-request-actions {
+    text-align: left;
+  }
+}
+    

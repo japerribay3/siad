@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>VitoBadi - Mis alquileres (propietario)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS base (mismo estilo que solicitudes de usuario) -->
+<link rel="stylesheet" href="./css/solicitudes_mias.css">
+<!-- CSS específico de propietario -->
+<link rel="stylesheet" href="./css/prop_alquileres.css">
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="vb-header">
+    <div class="vb-header-inner">
+      <div class="vb-header-left">
+        <img src="./fotos/logo.png" class="vb-logo" alt="VitoBadi logo">
+        <span class="vb-title">VitoBadi</span>
+      </div>
+      <div id="loginBox"></div>
+    </div>
+  </header>
+
+  <main class="solicitudes-main">
+    <section class="prop-card">
+
+      <h1 class="solicitudes-title">Mis Alquileres (Propietario)</h1>
+      <p class="solicitudes-subtitle">Histórico y alquileres activos de tus habitaciones.</p>
+
+      <!-- Aquí carga JS -->
+      <div id="propAlquileresContainer" class="prop-alquileres-list"></div>
+
+      <p id="propAlquileresEmpty" class="prop-empty-msg">
+        No tienes alquileres registrados.
+      </p>
+
+    </section>
+  </main>
+
+  <footer class="solicitudes-footer">
+    © 2025 VitoBadi
+  </footer>
+
+  <script type="module" src="./js/prop_alquileres.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+/* ===== PALETA CORPORATIVA ===== */
+:root{
+  --brand:#1E4D68;
+  --accent:#F48A1D;
+  --bg:#F8F7F4;
+  --text:#2E2E2E;
+  --muted:#6E6E6E;
+  --muted-light:#B8B8B8;
+  --surface:#FFFFFF;
+  --ring:rgba(30,77,104,.25);
+}
+
+/* ===== RESETEO BÁSICO ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  min-height:100vh;
+  font-family:"Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+}
+
+/* ===== HEADER LOGIN ===== */
+
+.vb-header{
+  width:100%;
+  background:var(--bg);
+  border-bottom:1px solid rgba(0,0,0,0.08);
+}
+.vb-header-inner{
+  max-width:900px;
+  margin:0 auto;
+  padding:8px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.vb-header-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.vb-logo{
+  width:36px;
+  height:36px;
+  object-fit:contain;
+}
+.vb-title{
+  font-family:"Poppins",sans-serif;
+  font-weight:700;
+  font-size:1.3rem;
+  color:var(--brand);
+}
+.vb-header-btn{
+  padding:8px 14px;
+  border-radius:999px;
+  background:var(--brand);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  font-size:.9rem;
+  border:none;
+  cursor:pointer;
+  transition:.15s;
+}
+.vb-header-btn:hover{
+  filter:brightness(1.07);
+}
+
+/* ===== CONTENIDO LOGIN ===== */
+
+.login-main{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px 16px;
+}
+
+.login-card{
+  width:100%;
+  max-width:380px;
+  background:var(--surface);
+  border-radius:18px;
+  border:1px solid rgba(0,0,0,0.06);
+  padding:24px 22px;
+  box-shadow:0 10px 28px rgba(0,0,0,0.06);
+}
+
+.login-title{
+  font-family:"Poppins",sans-serif;
+  font-weight:700;
+  font-size:1.6rem;
+  color:var(--brand);
+  margin-bottom:12px;
+}
+
+.login-form label{
+  display:block;
+  margin-top:14px;
+  font-weight:600;
+  font-size:.95rem;
+  color:var(--muted);
+}
+
+.login-form input{
+  width:100%;
+  margin-top:6px;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--muted-light);
+  background:#fff;
+  font-size:.95rem;
+}
+
+.login-form input:focus{
+  outline:none;
+  box-shadow:0 0 0 3px var(--ring);
+}
+
+.login-error{
+  min-height:18px;
+  margin-top:10px;
+  color:#c62828;
+  font-size:.9rem;
+}
+
+/* Botón entrar */
+.login-btn{
+  width:100%;
+  margin-top:18px;
+  padding:11px 16px;
+  border-radius:12px;
+  border:none;
+  background:var(--brand);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  font-size:1rem;
+  transition:.15s;
+}
+.login-btn:hover{
+  filter:brightness(1.05);
+}
+
+/* ===== FOOTER ===== */
+
+.login-footer{
+  text-align:center;
+  padding:12px 8px 18px;
+  font-size:.85rem;
+  color:var(--muted);
+}

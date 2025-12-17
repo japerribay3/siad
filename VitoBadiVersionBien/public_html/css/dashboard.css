@@ -1,0 +1,210 @@
+:root{
+  --brand:#1E4D68;
+  --accent:#F48A1D;
+  --bg:#F8F7F4;
+  --text:#2E2E2E;
+  --muted:#6E6E6E;
+  --muted-light:#B8B8B8;
+  --surface:#FFFFFF;
+  --ring:rgba(30,77,104,.25);
+}
+
+/* ========================
+   BODY
+=========================== */
+
+body{
+  margin:0;
+  background:var(--bg);
+  font-family:"Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--text);
+}
+
+/* ========================
+   HEADER (mismo estilo que index)
+=========================== */
+
+.vb-header{
+  position:sticky;
+  top:0;
+  width:100%;
+  background:var(--bg);
+  border-bottom:1px solid rgba(0,0,0,.1);
+  padding:8px 0;
+  z-index:100;
+}
+.vb-header-inner{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.vb-header-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.vb-logo{
+  width:40px;
+  height:40px;
+  object-fit:contain;
+}
+.vb-title{
+  font-family:"Poppins",sans-serif;
+  font-weight:700;
+  font-size:1.4rem;
+  color:var(--brand);
+}
+
+/* loginBox lo rellena dashboard.js */
+#loginBox{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* Botón estilo login/logout */
+.vb-login-btn{
+  padding:8px 16px;
+  background:var(--brand);
+  color:#fff;
+  border-radius:12px;
+  font-weight:600;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  transition:.2s;
+}
+.vb-login-btn:hover{
+  filter:brightness(1.08);
+}
+
+/* Usuario en header */
+.header-user{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.header-user img{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+/* ========================
+   NAV SUPERIOR DASHBOARD
+=========================== */
+
+.dash-nav{
+  background:color-mix(in srgb,var(--bg) 80%,#fff 20%);
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.dash-nav-inner{
+  max-width:1100px;
+  margin:0 auto;
+  padding:10px 20px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+/* Columna de menú */
+.nav-col{
+  position:relative;
+}
+.nav-col-btn{
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,.08);
+  background:#fff;
+  color:var(--text);
+  font-weight:600;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  transition:.15s;
+}
+.nav-col-btn:hover{
+  background:var(--surface);
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+
+/* Dropdowns */
+.nav-dropdown{
+  position:absolute;
+  top:100%;
+  left:0;
+  margin-top:6px;
+  min-width:190px;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 10px 28px rgba(0,0,0,.12);
+  padding:8px;
+  display:none;
+  flex-direction:column;
+  z-index:90;
+}
+.nav-dropdown a{
+  padding:8px 10px;
+  border-radius:8px;
+  text-decoration:none;
+  color:var(--text);
+  font-size:.95rem;
+  display:block;
+}
+.nav-dropdown a:hover{
+  background:color-mix(in srgb,var(--brand) 10%,#fff 90%);
+}
+
+/* Cuando JS la marque como abierta (.open en .nav-col) */
+.nav-col.open > .nav-dropdown{
+  display:flex;
+}
+
+/* ========================
+   CONTENIDO PRINCIPAL
+=========================== */
+
+.dash-main{
+  max-width:1100px;
+  margin:0 auto;
+  padding:24px 20px 40px;
+}
+.card{
+  background:#fff;
+  border-radius:18px;
+  border:1px solid rgba(0,0,0,.05);
+  padding:22px 20px;
+}
+.dash-title{
+  font-family:"Poppins",sans-serif;
+  font-size:1.8rem;
+  font-weight:700;
+  color:var(--brand);
+  margin:0 0 6px;
+}
+.dash-subtitle{
+  margin:0 0 16px;
+  color:var(--muted);
+  font-size:.95rem;
+}
+.muted{
+  color:var(--muted);
+}
+
+/* ========================
+   FOOTER
+=========================== */
+
+.footer{
+  text-align:center;
+  padding:16px;
+  color:var(--muted);
+  border-top:1px solid rgba(0,0,0,.05);
+  background:color-mix(in srgb,var(--bg) 85%,#fff 15%);
+}
+

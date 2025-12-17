@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>VitoBadi - Solicitudes de mis habitaciones</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS base (solicitudes usuario) -->
+<link rel="stylesheet" href="./css/solicitudes_mias.css">
+<!-- CSS específico propietario -->
+<link rel="stylesheet" href="./css/prop_solicitudes.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="vb-header">
+    <div class="vb-header-inner">
+      <div class="vb-header-left">
+        <img src="./fotos/logo.png" class="vb-logo" alt="VitoBadi logo">
+        <span class="vb-title">VitoBadi</span>
+      </div>
+      <div id="loginBox"></div>
+    </div>
+  </header>
+
+  <main class="solicitudes-main">
+    <section class="prop-card">
+
+      <h1 class="solicitudes-title">Solicitudes como Propietario</h1>
+      <p class="solicitudes-subtitle">Revisa quién quiere alquilar tus habitaciones.</p>
+
+      <!-- Aquí se cargan las cards -->
+      <div id="propSolicitudesContainer" class="prop-solicitudes-list"></div>
+
+      <p id="propSolicitudesEmpty" class="prop-empty-msg">
+        No tienes solicitudes en ninguna de tus habitaciones.
+      </p>
+
+    </section>
+  </main>
+
+  <footer class="solicitudes-footer">
+    © 2025 VitoBadi
+  </footer>
+
+  <script type="module" src="./js/prop_solicitudes.js"></script>
+</body>
+</html>

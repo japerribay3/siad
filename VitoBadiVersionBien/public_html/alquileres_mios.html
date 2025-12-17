@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VitoBadi - Mis Alquileres</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fuentes corporativas -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Mis Alquileres -->
+    <link rel="stylesheet" href="./css/alquileres_mios.css">
+  </head>
+
+  <body>
+    <!-- HEADER GLOBAL -->
+    <header class="vb-header">
+      <div class="vb-header-inner">
+        <div class="vb-header-left">
+          <img src="./fotos/logo.png" class="vb-logo" alt="VitoBadi logo">
+          <span class="vb-title">VitoBadi</span>
+        </div>
+        <div id="loginBox"></div>
+      </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="alquileres-main">
+      <section class="alquileres-card">
+        <h1 class="alquileres-title">Mis Alquileres</h1>
+        <p class="alquileres-subtitle">
+          Aquí puedes ver todas las habitaciones de las que eres inquilino, ordenadas por fecha.
+        </p>
+
+        <!-- CONTENEDOR DONDE JS PINTA LAS CARDS -->
+        <div id="alquileresContainer" class="alquileres-list"></div>
+
+        <p id="alquileresEmpty" class="alquileres-empty">Aún no hay alquileres registrados.</p>
+      </section>
+    </main>
+
+    <footer class="alquileres-footer">
+      © 2025 VitoBadi
+    </footer>
+
+    <script type="module" src="./js/alquileres_mios.js"></script>
+  </body>
+</html>

@@ -1,0 +1,276 @@
+:root{
+  --brand:#1E4D68;
+  --accent:#F48A1D;
+  --bg:#F8F7F4;
+  --text:#2E2E2E;
+  --muted:#6E6E6E;
+  --muted-light:#B8B8B8;
+  --surface:#FFFFFF;
+  --ring:rgba(30,77,104,.25);
+}
+
+/* RESET */
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  min-height:100vh;
+  font-family:"Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+}
+
+/* HEADER (igual estilo que las demás) */
+
+.vb-header{
+  width:100%;
+  background:var(--bg);
+  border-bottom:1px solid rgba(0,0,0,0.08);
+}
+.vb-header-inner{
+  max-width:1100px;
+  margin:0 auto;
+  padding:8px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.vb-header-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.vb-logo{
+  width:36px;
+  height:36px;
+  object-fit:contain;
+}
+.vb-title{
+  font-family:"Poppins",sans-serif;
+  font-weight:700;
+  font-size:1.3rem;
+  color:var(--brand);
+}
+#loginBox{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.header-user{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.header-user img{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  object-fit:cover;
+}
+.vb-login-btn{
+  padding:8px 14px;
+  border-radius:999px;
+  background:var(--brand);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+  font-size:.9rem;
+  transition:.15s;
+}
+.vb-login-btn:hover{
+  filter:brightness(1.07);
+}
+
+/* CONTENIDO PRINCIPAL */
+
+.geo-main{
+  flex:1;
+  max-width:1100px;
+  margin:0 auto;
+  padding:20px 16px 32px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+/* Tarjeta de filtros */
+
+.geo-card{
+  background:var(--surface);
+  border-radius:18px;
+  border:1px solid rgba(0,0,0,0.06);
+  padding:18px 16px 18px;
+  box-shadow:0 10px 24px rgba(0,0,0,0.04);
+}
+
+.geo-title{
+  font-family:"Poppins",sans-serif;
+  font-weight:700;
+  font-size:1.5rem;
+  color:var(--brand);
+  margin-bottom:4px;
+}
+
+.geo-subtitle{
+  font-size:.95rem;
+  color:var(--muted);
+  margin-bottom:10px;
+}
+
+.geo-form{
+  margin-top:6px;
+}
+
+.geo-form-row{
+  display:grid;
+  grid-template-columns:2fr 1fr auto;
+  gap:10px;
+}
+
+.geo-form-group label{
+  display:block;
+  font-weight:600;
+  font-size:.9rem;
+  color:var(--muted);
+  margin-bottom:4px;
+}
+
+.geo-form-group input,
+.geo-form-group select{
+  width:100%;
+  padding:8px 10px;
+  border-radius:12px;
+  border:1px solid var(--muted-light);
+  background:#fff;
+  font-size:.95rem;
+}
+
+.geo-form-group input:focus,
+.geo-form-group select:focus{
+  outline:none;
+  box-shadow:0 0 0 3px var(--ring);
+}
+
+.geo-form-group--btn{
+  display:flex;
+  align-items:flex-end;
+}
+
+.geo-btn{
+  padding:9px 16px;
+  border-radius:12px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  font-size:.95rem;
+}
+.geo-btn.primary{
+  background:var(--brand);
+  color:#fff;
+}
+.geo-btn.primary:hover{
+  filter:brightness(1.05);
+}
+
+.geo-error{
+  margin-top:8px;
+  min-height:18px;
+  color:#c62828;
+  font-size:.9rem;
+}
+
+/* Tarjeta mapa + resultados */
+
+.geo-map-card{
+  background:var(--surface);
+  border-radius:18px;
+  border:1px solid rgba(0,0,0,0.06);
+  padding:16px 14px 18px;
+  box-shadow:0 10px 24px rgba(0,0,0,0.04);
+}
+
+.geo-map{
+  width:100%;
+  height:360px;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(0,0,0,0.08);
+}
+
+/* Resultados */
+
+.geo-results-header{
+  margin-top:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:10px;
+}
+
+.geo-results-title{
+  font-family:"Poppins",sans-serif;
+  font-weight:600;
+  font-size:1.1rem;
+  color:var(--brand);
+}
+
+.geo-results-info{
+  font-size:.9rem;
+  color:var(--muted);
+}
+
+.geo-results-list{
+  margin-top:10px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:12px;
+}
+
+.geo-room-card{
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,0.05);
+  padding:10px 10px 12px;
+  background:#fff;
+}
+
+.geo-room-title{
+  font-weight:600;
+  font-size:.95rem;
+}
+
+.geo-room-city{
+  font-size:.85rem;
+  color:var(--muted);
+}
+
+.geo-room-price{
+  margin-top:4px;
+  font-weight:700;
+  color:var(--brand);
+}
+
+.geo-room-distance{
+  font-size:.8rem;
+  color:var(--muted);
+  margin-top:2px;
+}
+
+/* FOOTER */
+
+.geo-footer{
+  text-align:center;
+  padding:12px 8px 18px;
+  font-size:.85rem;
+  color:var(--muted);
+}
+
+/* Responsive pequeño */
+
+@media (max-width:720px){
+  .geo-form-row{
+    grid-template-columns:1fr;
+  }
+}

@@ -1,0 +1,234 @@
+:root{
+  --brand:#1E4D68;
+  --accent:#F48A1D;
+  --bg:#F8F7F4;
+  --text:#2E2E2E;
+  --muted:#6E6E6E;
+  --muted-light:#B8B8B8;
+  --surface:#FFFFFF;
+  --ring:rgba(30,77,104,.25);
+}
+
+/* ===== RESETEO BÁSICO ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  min-height:100vh;
+  font-family:"Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+}
+
+/* ===== HEADER (igual estilo que index/dashboard/login) ===== */
+.vb-header{
+  width:100%;
+  background:var(--bg);
+  border-bottom:1px solid rgba(0,0,0,0.08);
+}
+.vb-header-inner{
+  max-width:1100px;
+  margin:0 auto;
+  padding:8px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.vb-header-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.vb-logo{
+  width:36px;
+  height:36px;
+  object-fit:contain;
+}
+.vb-title{
+  font-family:"Poppins",sans-serif;
+  font-weight:700;
+  font-size:1.3rem;
+  color:var(--brand);
+}
+
+/* loginBox se rellena desde JS (igual que en dashboard/index) */
+#loginBox{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* Botón para login/logout reutilizable si lo quieres usar aquí también */
+.vb-login-btn{
+  padding:8px 14px;
+  border-radius:999px;
+  background:var(--brand);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+  font-size:.9rem;
+  transition:.15s;
+}
+.vb-login-btn:hover{
+  filter:brightness(1.07);
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+
+.hab-main{
+  flex:1;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:24px 16px 32px;
+}
+
+.hab-card{
+  width:100%;
+  max-width:640px;
+  background:var(--surface);
+  border-radius:18px;
+  border:1px solid rgba(0,0,0,0.06);
+  padding:24px 22px 26px;
+  box-shadow:0 10px 28px rgba(0,0,0,0.04);
+}
+
+.hab-title{
+  font-family:"Poppins",sans-serif;
+  font-weight:700;
+  font-size:1.6rem;
+  color:var(--brand);
+  margin-bottom:8px;
+}
+
+.hab-subtitle{
+  font-size:.95rem;
+  color:var(--muted);
+  margin-bottom:16px;
+}
+
+/* ===== FORMULARIO ===== */
+
+.hab-form label{
+  display:block;
+  margin-top:14px;
+  font-weight:600;
+  font-size:.95rem;
+  color:var(--muted);
+}
+
+.hab-form input,
+.hab-form select{
+  width:100%;
+  margin-top:6px;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--muted-light);
+  background:#fff;
+  font-size:.95rem;
+}
+
+.hab-form input:focus,
+.hab-form select:focus{
+  outline:none;
+  box-shadow:0 0 0 3px var(--ring);
+}
+
+/* ===== DROP ZONE IMAGEN ===== */
+
+.hab-drop-zone{
+  margin-top:6px;
+  border-radius:14px;
+  border:2px dashed var(--muted-light);
+  padding:18px 14px;
+  text-align:center;
+  background:rgba(255,255,255,0.6);
+  cursor:pointer;
+  transition:.15s;
+}
+.hab-drop-zone p{
+  margin:0;
+  font-size:.95rem;
+  color:var(--muted);
+}
+.hab-drop-zone:hover{
+  border-color:var(--brand);
+}
+.hab-drop-zone.is-dragover{
+  border-style:solid;
+  border-color:var(--brand);
+  background:rgba(30,77,104,0.05);
+}
+
+/* ===== PREVISUALIZACIÓN IMAGEN ===== */
+
+.hab-preview-wrapper{
+  margin-top:14px;
+}
+.hab-subtle{
+  font-size:.9rem;
+  color:var(--muted);
+}
+#previewImg{
+  display:block;
+  margin-top:8px;
+  max-width:100%;
+  max-height:240px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,0.06);
+  object-fit:cover;
+}
+
+/* ===== ERRORES Y ACCIONES ===== */
+
+.hab-error{
+  min-height:18px;
+  margin-top:10px;
+  color:#c62828;
+  font-size:.9rem;
+}
+
+.hab-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
+
+.hab-btn{
+  padding:10px 16px;
+  border-radius:12px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  font-size:.95rem;
+  text-decoration:none;
+  text-align:center;
+}
+.hab-btn.primary{
+  background:var(--brand);
+  color:#fff;
+}
+.hab-btn.primary:hover{
+  filter:brightness(1.05);
+}
+.hab-btn.ghost{
+  background:transparent;
+  color:var(--brand);
+  border:1px solid var(--muted-light);
+}
+.hab-btn.ghost:hover{
+  background:rgba(30,77,104,0.05);
+}
+
+/* ===== FOOTER ===== */
+
+.hab-footer{
+  text-align:center;
+  padding:12px 8px 18px;
+  font-size:.85rem;
+  color:var(--muted);
+}

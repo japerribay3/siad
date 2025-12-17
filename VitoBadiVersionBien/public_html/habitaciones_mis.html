@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VitoBadi - Mis habitaciones</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fuentes corporativas -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS específico -->
+    <link rel="stylesheet" href="./css/habitaciones_mis.css">
+  </head>
+
+  <body>
+    <!-- 🔵 HEADER GLOBAL -->
+    <header class="vb-header">
+      <div class="vb-header-inner">
+        <div class="vb-header-left">
+          <img src="./fotos/logo.png" class="vb-logo" alt="VitoBadi logo">
+          <span class="vb-title">VitoBadi</span>
+        </div>
+
+        <!-- Aquí el JS pintará usuario + Logout -->
+        <div id="loginBox"></div>
+      </div>
+    </header>
+
+    <!-- 🔵 CONTENIDO PRINCIPAL -->
+    <main class="mis-main">
+      <section class="mis-card">
+        <div class="mis-header-row">
+          <div>
+            <h1 class="mis-title">Mis habitaciones</h1>
+            <p class="mis-subtitle">
+              Estas son las habitaciones que tienes dadas de alta como propietario.
+            </p>
+          </div>
+          <a href="habitaciones_add.html" class="mis-btn primary">Añadir habitación</a>
+        </div>
+
+        <!-- Contenedor de la lista -->
+        <div id="roomsList" class="mis-rooms-list">
+          <!-- habitaciones_mis.js insertará aquí las tarjetas -->
+        </div>
+
+        <!-- Mensaje cuando no hay habitaciones -->
+        <p id="emptyMsg" class="mis-empty-msg">
+          No tienes ninguna habitación dada de alta todavía.
+        </p>
+      </section>
+    </main>
+
+    <footer class="mis-footer">
+      © 2025 VitoBadi
+    </footer>
+
+    <!-- JS que crearemos después -->
+    <script type="module" src="./js/habitaciones_mis.js"></script>
+  </body>
+</html>

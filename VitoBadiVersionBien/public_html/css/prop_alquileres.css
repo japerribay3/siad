@@ -1,0 +1,153 @@
+/* css/prop_alquileres.css */
+:root {
+  --surface: var(--vb-surface);
+  --muted: var(--vb-muted);
+  --accent: var(--vb-accent);
+}
+
+/* La card principal del contenido */
+.prop-card {
+  max-width: 1050px;
+  margin: 32px auto;
+}
+
+/* Lista de alquileres (propietario) */
+.prop-alquileres-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Mensaje vacío */
+.prop-empty-msg {
+  margin-top: 1.6rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* CARD DE ALQUILER (se apoya en las clases de alquileres_mios.js):
+   <article class="alquiler-card prop-alquiler-card">
+     <div class="alquiler-card-inner"> ... */
+.prop-alquiler-card {
+  background: var(--surface, #ffffff);
+  border-radius: 18px;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.prop-alquiler-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.1);
+}
+
+/* Mismo layout que las cards de alquileres_mios */
+.alquiler-card-inner {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1.1rem;
+  padding: 1rem 1.2rem;
+}
+
+.alquiler-card-img {
+  border-radius: 14px;
+  overflow: hidden;
+  align-self: stretch;
+  display: flex;
+}
+
+.alquiler-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.alquiler-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.alquiler-card-title {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.alquiler-card-price {
+  margin: 0 0 0.2rem;
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--accent, #ff8a5c);
+}
+
+.alquiler-card-dates,
+.alquiler-card-owner {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.alquiler-card-dates strong,
+.alquiler-card-owner strong {
+  color: #1f2933;
+}
+
+/* Estados */
+.alquiler-card-status {
+  margin: 0.35rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+/* Activo / Finalizado (clases que ya aplica el JS) */
+.alquiler-estado-activo {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: rgba(22, 163, 74, 0.25);
+  color: #166534;
+}
+
+.alquiler-estado-finalizado {
+  background: rgba(148, 163, 184, 0.15);
+  border-color: rgba(148, 163, 184, 0.45);
+  color: #475569;
+}
+
+/* Mensajes genéricos */
+.loading-msg {
+  color: var(--muted);
+  text-align: center;
+  margin-top: 8px;
+}
+
+.error {
+  color: #b91c1c;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    
+  .prop-card {
+    margin: 20px auto;
+  }
+
+  .alquiler-card-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .alquiler-card-img {
+    max-height: 190px;
+  }
+}
