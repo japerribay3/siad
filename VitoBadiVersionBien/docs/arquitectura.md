@@ -69,7 +69,7 @@ Ubicar en `/WEB-INF/jsp` para evitar acceso directo. Ejemplos:
 - Sanitizar entradas y usar `PreparedStatement` en DAO para prevenir inyección SQL.
 
 ## Despliegue y configuración
-- `context.xml` en `META-INF` con el recurso JNDI `jdbc/vitobadi` apuntando al esquema `vitobadi06` (host `localhost`, user/pass de MySQL local, `useSSL=false`, `serverTimezone=UTC`).
+- `context.xml` en `META-INF` con el recurso JNDI `jdbc/vitobadi` (host `localhost`, user/pass de MySQL local, `useSSL=false`, `serverTimezone=UTC`).
 - `web.xml` mapea los servlets principales y define bienvenidas (`index.jsp`).
 - Para desarrollo, mantener los HTML actuales en `/public_html` como mockups; las JSP reutilizarán el CSS y assets.
 
