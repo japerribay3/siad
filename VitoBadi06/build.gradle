@@ -1,0 +1,13 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'war'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    providedCompile 'jakarta.platform:jakarta.jakartaee-web-api:11.0.0'
+    implementation("mysql:mysql-connector-java:8.0.23")
+    testImplementation     'junit:junit:4.13'
+}
